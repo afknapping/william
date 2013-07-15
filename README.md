@@ -156,9 +156,22 @@ ___
 - [PRISM Break](https://prism-break.org/)
 - [Richardson Maturity Model](http://martinfowler.com/articles/richardsonMaturityModel.html)
 
+---
+- [Chris Ball » WebRTC without a signaling server](http://blog.printf.net/articles/2013/05/17/webrtc-without-a-signaling-server/)
+- [Sharefest](http://www.sharefest.me/), [Peer5/ShareFest](https://github.com/Peer5/ShareFest#how-does-it-work), [Sharefest | Hacker News thread](https://news.ycombinator.com/item?id=5824114)
+- [Open Peer | Open P2P Protocol & Specification](http://openpeer.org/)
+- [ShareIt-project (ShareIt!)](https://github.com/ShareIt-project)
+- [PeerJS - Peer-to-peer data in the web browser](http://peerjs.com/)
+- [P is for Peer-to-Peer Networking](http://ozan.io/p/)
+  ![](http://ozan.io/p/resource/image/ping-pong-flow.png)
+- f
+
+
 ## Copyright and Licence
 
 This doc: licenced via [CC BY-NC-SA 3.0 (Creative Commons — Attribution-NonCommercial-ShareAlike 3.0 Unported)](https://creativecommons.org/licenses/by-nc-sa/3.0/).
 © 2010-2013 [Fabian Fabian](http://filtercake.com).
 
 Images: [File:Presidio Modelo.JPG - Wikipedia](https://en.wikipedia.org/wiki/File:Presidio_Modelo.JPG). [Nyan_Cat_Wide.jpg (1920×1080)](http://images.dailytech.com/nimage/Nyan_Cat_Wide.jpg).
+
+<a href="https://github.com/filtercake/william"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
