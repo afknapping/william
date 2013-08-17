@@ -6,17 +6,51 @@
 
 <a href="http://www.cornify.com" onclick="cornify_add();return false;"><img src="http://www.cornify.com/assets/cornify.gif" width="61" height="16" border="0" alt="Cornify" /></a><script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script> <a href="#" onclick="sharkify_add();return false;"><img src="http://www.iamcal.com/sharkify/sharkify.gif" width="61" height="16" border="0" alt="Sharkify" /></a><script type="text/javascript" src="http://www.iamcal.com/sharkify/sharkify.js"></script>
 
-A frontend (and API) for [mesh networks](https://en.wikipedia.org/wiki/Mesh_networks). Think of it as your future *Community Operating System*.
+## A frontend (and API) for [mesh networks](https://en.wikipedia.org/wiki/Mesh_networks).
 
-The idea is to abstract away all the different mesh networks, groups, firmwares and protocols from the user. She turns on her thingy, tells her neighbor, and they can start chatting after connecting their laptops/tablets/screenreaders the network.
+aka: your future...
 
-So far this is just a random collection of (half-)baked ideas, many of which are floating in my head for years. Some are even contradicting each other. Please note that as far networking goes, I have no idea what I am talking about...
+## Community Operating System
+
+Think of it as your future *Community Operating System*.
+
 
 ## Need
 
-A mesh network is not the end, it is the means. We need to define concrete use cases and build simple frontend apps for that. Chat. Filesharing. Mediastreams. Digital library. Wiki scraping/importing. Events. agendas/timetables. Ticketing/RSVP for Meetups/BarCamps/...  and CC-BY-NC-SA is the new default.
-
 If [Prism](https://en.wikipedia.org/wiki/PRISM_(surveillance_program)) showed us anything, then that the current centralized version of the internet is ALL WRONG™. See [Why browsers should offer login by michielbdejong](http://michielbdejong.tumblr.com/post/4863349670/why-browsers-should-offer-login) for a great introduction on a decentral frontend web.
+
+## Fixed nodes
+
+Thinking in "blocks" as they form a city (square of connected buildings). longitude/lattitude coordinates.
+
+![](https://dl.dropboxusercontent.com/s/6fjsrnjzy7i40wh/2013-07-09%20at%2014.38.png)
+
+connect to neighbors to…
+
+- share resources
+- feel less alienated
+- meet-up, par-tey
+- Organize support for the block's 3D printer, lasercutter, CNC, Cow, Chickens, bike repair store…
+- organize direct ordering at farms instead of each one driving to the supermarket
+- organize car sharing
+- organize child-care
+- Events: agendas/timetables & Ticketing/RSVP (eg Meetups/BarCamps/..). 
+- asf... 
+- become independent from data-hosting web apps
+
+
+
+## Mobile/ad-hoc/event/outside… nodes
+
+connect to other attendants/campers/... to
+  
+- have channels/communities for usergroups, barcamps, conferences, tracks, talks, topics,… 
+- become independent from data-hosting web apps
+
+## Virtual nodes
+
+A node can also be completely anonymous
+
 
 ## User Onboarding:
 
@@ -50,36 +84,6 @@ The possibility of having *internet via the mesh* should be a given. More import
 - there are no "load times" or similar technical things. As a default, everything is translated into the metaphorical space. Loading time to first connect to a distant node eg might be shown as travelling through space.
 - Debug mode is available with a keyboard shortcut. All visualization can be turned off by the node owner(s).
 
-## Fixed nodes
-
-Thinking in "blocks" as they form a city (square of connected buildings). longitude/lattitude coordinates.
-![](https://dl.dropboxusercontent.com/s/6fjsrnjzy7i40wh/2013-07-09%20at%2014.38.png)
-
-connect to neighbors to…
-
-- share resources
-- feel less alienated
-- meet-up, par-tey
-- Organize support for the block's 3D printer, lasercutter, CNC, Cow, Chickens, bike repair store…
-- organize direct ordering at farms instead of each one driving to the supermarket
-- organize car sharing
-- organize child-care
-- keep community clean and safe
-- asf... 
-- become independent from data-hosting web apps
-
-___
-
-- Fixed nodes provide a safe heaven for "normal users". Since the real-life locations of those nodes are known, and they are owned by the local neighborhood, the chance of containing maliciuos code is minimal. Also, these are connected via the inernet, so a central collective authority could ensure their safety. Maybe fixed nodes are checkable for integrity (image checksum?).
-- **The fixed nodes represent Planet Earth. All the rest of the universe is up for us to build.**
-
-## Mobile/ad-hoc/event/outside… nodes
-
-connect to other attendants/campers/... to
-  
-- have channels/communities for usergroups, barcamps, conferences, tracks, talks, topics,… 
-- become independent from data-hosting web apps
-
 ## Auth
 
 How does authentication work? Smartcard? Fingerprint? Gpg? RSA? Crossed with  device UUID?
@@ -95,7 +99,7 @@ A cardboard pyramid is housing a Raspi. Two sides of the pyramid are solar panel
 
 ## Software
 
-One main, "official" Raspi-image could be maintained by the community. 
+One main, "official" Raspi-image could be maintained by the community.
 
 - Channels. Every planet has a channel. Every project, every system can have a subchannel. Every message (or parts) can be dragged into a node library. It becomes an (index)card. With an id. Who has access to the whole library? Does every card have an owner and permissions?
 - Filesharing. Tagging, no folders. A user shares files, other people can pull. Or push to channel/planet/community – it becomes then part of the library, and is cached on the current host of the node (if hardware has sufficient diskspace). Soft Quotas.
@@ -103,6 +107,16 @@ One main, "official" Raspi-image could be maintained by the community.
 - Apps (and Plugins). "As a node maintainer I want my node to enable Bitcoin exchange by choosing the Bitcoin app." "As a node maintainer I want to enable my node to offer videoconferencing by installing…"  See [PRISM Break](https://prism-break.org/) for a comprehensive inital list…
 - Every functionality besides chat and filesharing is a module.
 - Maybe a hardware host is the sun, which powers your node with resources (data computing power). Your node is a planet. Planets can switch suns at all times.
+
+## Architecture
+
+Everything is frontend, JS/HTML only. All the server does is send data via an standardized API. The standardization of this API is the basis for interconnectivity of *different* mesh networks.
+
+There is no direct DOM manioulation through functional code. Rendering is abstracted and uses views, either in separate files or objects.
+
+All the server does is exchange information on who is visible and who is not. this is done in a passive way. Ideally the server can not distinguish between sb who is offline and sb who wants to be invisible. Not sure if that is even technically possible.
+
+- [draft-uberti-rtcweb-jsep-02 - Javascript Session Establishment Protocol](http://tools.ietf.org/html/draft-uberti-rtcweb-jsep-02#section-2)
 
 ## Distribution
 
@@ -126,6 +140,10 @@ There is no code yet. Only this first collection of ideas.
 ## Next steps:
 
 - afternoon hack session proof of concept: two laptops chatting over [Freifunk](https://en.wikipedia.org/wiki/Freifunk), either frontend only (if possible) or host app running on Raspi. A little tools/code/frameworks/protocols as possible. Can two browsers connect directly via Freifunk and exchange messages in raw JSON?
+
+
+
+
 
 ___
 
@@ -164,8 +182,13 @@ ___
 - [PeerJS - Peer-to-peer data in the web browser](http://peerjs.com/)
 - [P is for Peer-to-Peer Networking](http://ozan.io/p/)
   ![](http://ozan.io/p/resource/image/ping-pong-flow.png)
-- f
-
+- [oztu/alternative-internet](https://github.com/oztu/alternative-internet#m)
+- [Get started with WebRTC | Tutorial | .net magazine](http://www.netmagazine.com/tutorials/get-started-webrtc)
+- [webrtc resources · tutorials · WPD · WebPlatform.org](http://docs.webplatform.org/wiki/tutorials/webrtc_resources)
+- [Getting started with WebRTC and Web Audio - Google Drive](https://docs.google.com/a/superpursuitmo.de/document/d/1idl_NYQhllFEFqkGQOLv8KBK8M3EVzyvxnKkHl4SuM8/edit)
+- [Webrtc](http://de.slideshare.net/libfetion/webrtc)
+----
+- [Free Network Foundation](http://thefnf.org/about/)
 
 ## Copyright and Licence
 
@@ -173,5 +196,3 @@ This doc: licenced via [CC BY-NC-SA 3.0 (Creative Commons — Attribution-NonCom
 © 2010-2013 [Fabian Fabian](http://filtercake.com).
 
 Images: [File:Presidio Modelo.JPG - Wikipedia](https://en.wikipedia.org/wiki/File:Presidio_Modelo.JPG). [Nyan_Cat_Wide.jpg (1920×1080)](http://images.dailytech.com/nimage/Nyan_Cat_Wide.jpg).
-
-<a href="https://github.com/filtercake/william"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
