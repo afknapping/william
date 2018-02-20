@@ -8,11 +8,11 @@
 
 ## A frontend (and API) for [mesh networks](https://en.wikipedia.org/wiki/Mesh_networks).
 
-aka: your future...
+aka
 
 ## Community Operating System
 
-Think of it as your future *Community Operating System*.
+Think of it as a *Community Operating System*.
 
 
 ## Need
